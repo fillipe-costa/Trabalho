@@ -18,19 +18,37 @@
   </head>
 
   <body>
-    @guest
-    <div>
-      <nav class = "color">
 
-        <div class = "nav-wrapper z-depth-1">
-          <ul id = "nav-mobile" class = "left hide-on-med-and-down">
-            <a href="#"> Acesse o cardápio </a>
-          </ul>
-          </ul>
+    <div>
+        <nav class = "color">
+
+          <div class = "nav-wrapper z-depth-1">
+            <ul id = "nav-mobile" class = "left hide-on-med-and-down">
+
+            </ul>
+            @guest
+              <ul id = "nav-mobile" class = "right hide-on-med-and-down">
+                <li> <a href = "#"> Olá visitante </a> </li>
+              </ul>
+              @else
+              <ul id = "nav-mobile" class = "right hide-on-med-and-down">
+                <li> <a href="#"> Olá {{ Auth::user()->name }} </a> </li>
+                <li>
+                  <a href="{{ route('logout') }}"
+                    onclick = "event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Sair
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                      {{ csrf_field() }}
+                  </form>
+                </li>
+            </ul>
+          @endguest
         </div>
       </nav>
     </div>
 
+    @guest
     <div class="valign-wrapper row login-box white-text">
       <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4 color">
         <form method="POST" action="{{ route('login') }}">
@@ -57,28 +75,7 @@
     </div>
 
     @else
-      <div>
-          <nav class = "color">
 
-            <div class = "nav-wrapper z-depth-1">
-              <ul id = "nav-mobile" class = "left hide-on-med-and-down">
-                <a href="#"> Acesse o cardápio </a>
-              </ul>
-              <ul id = "nav-mobile" class = "right hide-on-med-and-down">
-                <li> <a href="#"> {{ Auth::user()->name }} </a> </li>
-                <li>
-                  <a href="{{ route('logout') }}"
-                    onclick = "event.preventDefault(); document.getElementById('logout-form').submit();">
-                    Sair
-                  </a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                      {{ csrf_field() }}
-                  </form>
-                </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
     @endguest
 
 
@@ -89,6 +86,7 @@
             <ul>
               <li> <a href = "#"> Restaurantes </a> </li>
               <li> <a href = "#"> Contato </a> </li>
+              <li> <a href="#"> Cardápio </a> </li>
               <li> <a href="{{ route('register') }}">  Cadastrar-se </a> </li>
           </div>
 
