@@ -55,7 +55,7 @@
             <ul>
               <li class = "white-text"> Empresa </li>
               <li> <a href = "#"> Restaurantes </a> </li>
-              <li> <a href = "{{ route('contato')}}"> Contato </a> </li>
+              <li> <a href = "{{ route('contactus')}}"> Contato </a> </li>
             </ul>
           </div>
           <div class = "col s4 m4 l4">

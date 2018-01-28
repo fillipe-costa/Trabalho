@@ -36,6 +36,6 @@ class HomeController extends Controller
     }
 
     public function contato() {
-      return view('contato');
+      return view('contactUS');
     }
 }
