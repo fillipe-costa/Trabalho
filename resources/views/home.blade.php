@@ -1,6 +1,7 @@
 @extends('layouts.navfooter')
 
-@section('content', 'navfooter')
+@section('content')
+@endsection
 
 @guest
  <div class="valign-wrapper row login-box white-text">
@@ -21,8 +22,7 @@
          </div>
        </div>
        <div class="card-action center-align">
-         <!-- <input type="submit" class="btn green waves-effect" value="Cadastrar-se" href="route('register')"> -->
-         <input type="submit" class="btn green waves-effect waves-light" value="Login" href="route('login')">
+         <input type="submit" class="btn red waves-effect waves-light" value="Login" href="route('login')">
        </div>
      </form>
    </div>

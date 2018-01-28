@@ -23,25 +23,25 @@
         <nav class = "color">
 
           <div class = "nav-wrapper z-depth-1">
+            <a href="#" class = "brand-logo center"> <strong> PIZZARIA </strong> </a>
             <ul id = "nav-mobile" class = "left hide-on-med-and-down">
-              <li> <strong> PIZZA HOUSE </strong> </li>
+              <li> <a href = "{{ route('home')}}"> Home </a> </li>
             </ul>
+            <ul id = "nav-mobile" class = "right hide-on-med-and-down">
             @guest
-              <ul id = "nav-mobile" class = "right hide-on-med-and-down">
-                <li> <a> Olá visitante </a> </li>
-              </ul>
-              @else
-              <ul id = "nav-mobile" class = "right hide-on-med-and-down">
-                <li>   <a href="{{ route('profile')}}"> Olá {{ Auth::user()->name }}(ver perfil) </a> </li>
-                <li>
-                  <a href="{{ route('logout') }}"
-                    onclick = "event.preventDefault(); document.getElementById('logout-form').submit();">
-                    Sair
-                  </a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                      {{ csrf_field() }}
-                  </form>
-                </li>
+              <li> <a href = "{{ route('register')}}"> Olá visitante(cadastrar-se) </a> </li>
+            </ul>
+            @else
+              <li>   <a href="{{ route('profile')}}"> Olá {{ Auth::user()->name }}(ver perfil) </a> </li>
+              <li>
+                <a href="{{ route('logout') }}"
+                  onclick = "event.preventDefault(); document.getElementById('logout-form').submit();">
+                  Sair
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                    {{ csrf_field() }}
+                </form>
+              </li>
             </ul>
           @endguest
         </div>
@@ -63,9 +63,6 @@
               <li class = "white-text"> Links úteis </li>
               <li> <a href="#"> Cardápio </a> </li>
               <li> <a href="#"> Fazer pedido </a> </li>
-              @guest
-              <li> <a href="{{ route('register') }}">  Cadastrar-se </a> </li>
-              @endguest
           </div>
           <div class = "col s4 m4 l4">
             <ul>
