@@ -1,6 +1,6 @@
 @extends('layouts.navfooter')
 
-@section('content')
+@section('conteudo')
 @endsection
 
 

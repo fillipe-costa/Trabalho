@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
+use App\Mail\mailme;
+
+Route::get('/', function() {
     return view('home');
 });
 
+Route::get('/enviar', function() {
+  Mail::to('lagun.lahari@gmail.com')->send(new mailme);
+
+  return view('emails.mailme');
+});
 
 Auth::routes();
 

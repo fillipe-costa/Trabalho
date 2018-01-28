@@ -1,6 +1,6 @@
 @extends('layouts.navfooter')
 
-@section('content')
+@section('conteudo')
 @endsection
 
 <div class="valign-wrapper row login-box white-text">

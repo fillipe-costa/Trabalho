@@ -80,7 +80,7 @@
             © 2018
           </div>
         </div>
-        @yield('content')
+        @yield('conteudo')
     </footer>
 
     <script type = "text/javascript" src = "https://code.jquery.com/jquery-3.2.1.min.js"> </script>

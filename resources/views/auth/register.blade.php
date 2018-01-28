@@ -1,6 +1,9 @@
 @extends('layouts.app')
+@extends('layouts.navfooter')
 
-@section('content')
+@section('conteudo')
+@endsection
+
 <div class="container">
     <div class="row login-box">
         <div class="col-md-8 col-md-offset-2 ">
@@ -116,4 +119,3 @@
         </div>
     </div>
 </div>
-@endsection
