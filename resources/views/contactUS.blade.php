@@ -1,9 +1,6 @@
-@extends('layouts.navfooter')
 
-@section('conteudo')
-@endsection
 
-<!-- <html>
+<html>
 <head>
 <title>Laravel 5.4 Cloudways Contact US Form Example</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -44,37 +41,4 @@
 <button class="btn btn-success">Contact US!</button>
 </div>
 
-{!! Form::close() !!} -->
-
-@if(Session::has('success'))
-   <div class="alert alert-success">
-     {{ Session::get('success') }}
-   </div>
-@endif
-
-<div class="valign-wrapper row login-box white-text">
-  <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4 color">
-    <form method="POST" action="{{ route('contact_us.store') }}"> {{ csrf_field() }}
-      <div class="card-content">
-        <h4 class = "center-align"> Formulário de contato </h4>
-        <div class="row">
-          <div class="input-field col s12">
-            Nome:
-            <input type="text" class="validate" name="name" id="name" />
-          </div>
-          <div class="input-field col s12">
-            Email:
-            <input type="email" class="validate" name="email" id="email" />
-          </div>
-          <div class="input-field col s12">
-            Comentários:
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
-          </div>
-        </div>
-      </div>
-      <div class="card-action center-align">
-        <input type="submit" class="btn red waves-effect waves-light" value="Enviar" href="route('contact_us.store')">
-      </div>
-    </form>
-  </div>
-</div>
+{!! Form::close() !!}
