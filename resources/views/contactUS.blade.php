@@ -1,21 +1,25 @@
+@extends('layouts.navfooter')
+
+@section('conteudo')
+@endsection
 
 
-<html>
+
+<!-- <html>
 <head>
 <title>Laravel 5.4 Cloudways Contact US Form Example</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body>
+<body> -->
 
-<div class="container">
-<h3>Formulário de Contato</h3>
+<div class="container login-box">
+<h4>Contact US Form</h4>
 
 @if(Session::has('success'))
    <div class="alert alert-success">
      {{ Session::get('success') }}
    </div>
 @endif
-
 
 {!! Form::open(['route'=>'contact_us.store']) !!}
 
@@ -42,3 +46,5 @@
 </div>
 
 {!! Form::close() !!}
+
+</div>
