@@ -53,29 +53,27 @@
 @endif
 
 <div class="valign-wrapper row login-box white-text">
-
   <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4 color">
-    <form method="POST" action="{{ route('contact_us.store') }}">
-        {{ csrf_field() }}
+    <form method="POST" action="{{ route('contact_us.store') }}"> {{ csrf_field() }}
       <div class="card-content">
-        <form class = "col s12 m12 l12">
-          <h4 class = "center-align"> Formulário para contato </h4>
-            <div class="input-field col s12 m12 l12">
-              Nome:
-              <input id = "nome" type = "text" class = "validate">
-            </div>
-            <div class="input-field col s12 m12 l12">
-              E-mail:
-              <input id = "email" type = "email" class = "validate">
-            </div>
-            <div class="input-field col s12 m12 l12">
-              Comentários:
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-            <div class="card-action center-align">
-              <input type="submit" class="btn red waves-effect waves-light" value="Enviar" href = "route('contact_us.store')">
-            </div>
+        <h4 class = "center-align"> Formulário de contato </h4>
+        <div class="row">
+          <div class="input-field col s12">
+            Nome:
+            <input type="text" class="validate" name="name" id="name" />
           </div>
-        </form>
+          <div class="input-field col s12">
+            Email:
+            <input type="email" class="validate" name="email" id="email" />
+          </div>
+          <div class="input-field col s12">
+            Comentários:
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="card-action center-align">
+        <input type="submit" class="btn red waves-effect waves-light" value="Enviar" href="route('contact_us.store')">
       </div>
     </form>
   </div>
